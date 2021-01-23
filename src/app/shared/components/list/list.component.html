@@ -1,0 +1,11 @@
+<mat-selection-list  [multiple]="false" class="list" (selectionChange)="onChange($event)">
+  <mat-list-option #option class="list__item" *ngFor="let track of tracks" [value]="track">
+    <div class="list__item__track">
+      <div class="list__item__track__disc">
+        <img [src]="'assets/images/' + track.image" >
+      </div>
+      <div class="list__item__track__name">{{ track.name }}</div>
+      <div class="list__item__track__artist">{{  track.artist }}</div>
+    </div>
+  </mat-list-option>
+</mat-selection-list>

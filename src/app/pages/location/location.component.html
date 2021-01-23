@@ -1,0 +1,9 @@
+<div class="location">
+  <h1 class="location__title">Tu Ubicación actual</h1>
+  <section class="location__map">
+    <agm-map [maxZoom]="17" [clickableIcons]="true" [disableDefaultUI]="false"
+      [fitBounds]="true">
+      <agm-marker [latitude]="latitude" [longitude]="longitude" [agmFitBounds]="true"></agm-marker>
+    </agm-map>
+  </section>
+</div>

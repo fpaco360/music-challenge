@@ -1,0 +1,97 @@
+@import '../../../theme.scss';
+
+.music-player {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  &__card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    width: 100%;
+    &__disc {
+      align-items: center;
+      background-color: gray;
+      border-radius: 100%;
+      display: flex;
+      height: 15rem;
+      justify-content: center;
+      width: 15rem;
+      overflow: hidden;
+      img {
+        width: 15rem;
+        height: 15rem;
+        object-fit: cover;
+      }
+      &__main {
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        background-color: $white;
+        border-radius: 100%;
+      }
+    }
+    &__info {
+      align-items: center;
+      // background-color: sandybrown;
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      justify-content: center;
+      width: 100%;
+      &__track {
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 0.5rem;
+        color: $primary;
+      }
+      &__artist {
+        font-size: .9375rem;
+        opacity: .5;
+        color: $primary;
+      }
+    }
+
+    &__time {
+      height: fit-content;
+      width: 75%;
+      mat-slider {
+        width: 100%;
+      }
+      &__labels {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        &__label {
+          font-size: 0.6875rem;
+          opacity: .5;
+          color: $primary;
+        }
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      height: fit-content;
+      justify-content: center;
+      width: 100%;
+      margin-top: 1rem;
+      &__skip {
+        margin: 0 .5rem;
+      }
+      &__play {
+        margin: 0 .5rem;
+      }
+    }
+  }
+}
+
+.playing {
+  animation: spin 5s linear infinite;
+}
+@keyframes spin {
+  from {  transform:rotate(0deg); }
+  to {  transform:rotate(360deg); }
+}

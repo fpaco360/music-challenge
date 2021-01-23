@@ -1,0 +1,10 @@
+<div class="music">
+  <section class="music__list">
+    <app-list [tracks]="tracks" (selectedEvent)="selectTrack($event)"></app-list>
+  </section>
+  <section class="music__player">
+    <app-music-player [track]="selectedTrack" (playerSub)="currentTrack($event)" (prevEvent)="prevTrack($event)"
+      (nextEvent)="nextTrack($event)">
+    </app-music-player>
+  </section>
+</div>

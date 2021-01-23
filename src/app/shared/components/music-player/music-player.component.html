@@ -1,0 +1,31 @@
+<div class="music-player">
+  <mat-card class="music-player__card">
+    <div class="music-player__card__disc" [ngClass]="{ playing: playing }">
+      <img *ngIf="track.image" [src]="'assets/images/' + track.image">
+      <div class="music-player__card__disc__main"></div>
+    </div>
+    <div class="music-player__card__info">
+      <span class="music-player__card__info__track">{{ track.name }}</span>
+      <span class="music-player__card__info__artist">{{ track.artist }}</span>
+    </div>
+    <div class="music-player__card__time">
+      <mat-slider min="0" [max]="track.duration" [step]="1" [value]="currentDuration"></mat-slider>
+      <div class="music-player__card__time__labels">
+        <span class="music-player__card__time__labels__label">{{ currentDuration | trackTime }}</span>
+        <span class="music-player__card__time__labels__label">{{ track.duration | trackTime }}</span>
+      </div>
+    </div>
+    <div class="music-player__card__buttons">
+      <button mat-mini-fab color="accent" class="music-player__card__buttons__skip" (click)="backTrack()">
+        <mat-icon>skip_previous</mat-icon>
+      </button>
+      <button mat-fab color="accent" class="music-player__card__buttons__play" (click)="playTrack()">
+        <mat-icon *ngIf="playing">pause</mat-icon>
+        <mat-icon *ngIf="!playing">play_arrow</mat-icon>
+      </button>
+      <button mat-mini-fab color="accent" class="music-player__card__buttons__skip" (click)="nextTrack()">
+        <mat-icon>skip_next</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+</div>

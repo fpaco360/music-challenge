@@ -1,0 +1,38 @@
+@import '../../theme.scss';
+
+.home {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  &__welcome {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary;
+    margin: 1rem 0 3rem 0;
+  }
+  &__data {
+    width: 80%;
+    height: 60%;
+    box-shadow: 0px 0px 7px $primary;
+    @media(min-width: 768px) {
+      width: 35%;
+    }
+    mat-card-header {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__user {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &__label {
+        margin: .5rem 0;
+        color: $primary;
+        font-size: 1rem;
+      }
+    }
+  }
+}
